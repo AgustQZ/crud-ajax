@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud API Rest Ajax</title>
+</head>
+
+<body>
+    <h1>Crud API Rest Ajax</h1>
+    <section class="crud">
+        <!-- formulario -->
+        <article>
+            <h2 class="crud-title">Agregar Juegos Favoritos</h2>
+            <form action="" class="crud-form">
+                <input type="text" name="nombre" placeholder="Desarrollador" required>
+                <br>
+                <input type="text" name="desarrollador" placeholder="Desarrollador" required>
+                <br>
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+        </article>
+        <!-- lista de elementos -->
+        <article>
+            <h2>Ver Juegos</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Desarrollador</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </article>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="name"></td>
+            <td class="developer"></td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

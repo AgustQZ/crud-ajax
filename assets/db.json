@@ -1,0 +1,41 @@
+{
+  "juegos": [
+    {
+      "id": 1,
+      "nombre": "Mobile Legends",
+      "desarrollador": "Moonton"
+    },
+    {
+      "id": 2,
+      "nombre": "Fortnite",
+      "desarrollador": "Epic Games"
+    },
+    {
+      "id": 3,
+      "nombre": "Starcraft II",
+      "desarrollador": "Blizzar"
+    },
+    {
+      "nombre": "Clash Royale",
+      "desarrollador": "Supercell",
+      "id": 4
+    }
+  ],
+  "novelas": [
+    {
+      "id": 1,
+      "nombre": "Tales and Demons and Gods",
+      "capitulos": "indefinidos"
+    },
+    {
+      "id": 2,
+      "nombre": "Against the Gods",
+      "capitulos": "1900"
+    },
+    {
+      "id": 3,
+      "nombre": "Xian Ni - Renegado Inmortal",
+      "capitulos": "1800"
+    }
+  ]
+}
