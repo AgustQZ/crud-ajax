@@ -1,9 +1,8 @@
 IMPORTANTE
 - Debes tener instalado nodeJs
-- Debes tener Json Server
-Ir a https://github.com/typicode/json-server, o https://jsonplaceholder.typicode.com/ para saber mas.
+- Debes tener Json Server Ir a https://github.com/typicode/json-server, o https://jsonplaceholder.typicode.com/ para saber mas.
 
-//para instalar en el proyecto
+//para instalar json server global
     npm install -g json-server
 
 //para iniciar la ejecucion de json server
