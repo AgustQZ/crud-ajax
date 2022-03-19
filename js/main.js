@@ -56,7 +56,7 @@ const getAll = () => {
             $table.querySelector("tbody").appendChild($fragment);
         },
         error: (err) => {
-            console.error(err);
+            // console.error(err);
             $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
         },
         // data: null,
@@ -64,3 +64,59 @@ const getAll = () => {
 };
 
 d.addEventListener("DOMContentLoaded", getAll);
+
+d.addEventListener("submit", (e) => {
+    if (e.target === $form) {
+        // evitar que el boton envie datos por defecto para usar ajax
+        e.preventDefault;
+
+        // si no hay valor en el id
+        if (!e.target.id.value) {
+            // POST = crear
+            ajax({
+                url: "http://localhost:3000/juegos",
+                method: "POST",
+                success: (res) => location.reload(),
+                error: () =>
+                    $form.insertAdjacentHTML("afterend", `<p>${err}</p>`),
+                data: {
+                    nombre: e.target.nombre.value,
+                    desarrollador: e.target.desarrollador.value,
+                },
+            });
+        } else {
+            //PUT = actualizar
+            ajax({
+                url: `http://localhost:3000/juegos/${e.target.id.value}`,
+                method: "PUT",
+                success: (res) => location.reload(),
+                error: () =>
+                    $form.insertAdjacentHTML("afterend", `<p>${err}</p>`),
+                data: {
+                    nombre: e.target.nombre.value,
+                    desarrollador: e.target.desarrollador.value,
+                },
+            });
+        }
+    }
+});
+
+d.addEventListener("click", (e) => {
+    if (e.target.matches(".edit")) {
+        $title.textContent = "Editar Juego";
+        $form.nombre.value = e.target.dataset.name;
+        $form.desarrollador.value = e.target.dataset.developer;
+        $form.id.value = e.target.dataset.id;
+    }
+    if (e.target.matches(".delete")) {
+        let isDelete = confirm("Esta seguro que desea eliminar el juego?");
+        if (isDelete) {
+            ajax({
+                url: `http://localhost:3000/juegos/${e.target.dataset.id}`,
+                method: "DELETE",
+                success: (res) => location.reload(),
+                error: () => alert(err),
+            });
+        }
+    }
+});
