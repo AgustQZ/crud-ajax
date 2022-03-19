@@ -9,3 +9,6 @@ IMPORTANTE
     Nota: se debe escribir la ruta completa de la base de datos (en este caso esta dentro de la carpeta assets/)
 
     json-server --watch assets/db.json
+
+// para usar axios es necesario agregar el cdn en el html:
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
