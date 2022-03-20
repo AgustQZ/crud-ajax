@@ -30,13 +30,13 @@ const getAll = async () => {
                 el.desarrollador;
             $template.querySelector(".delete").dataset.id = el.id;
             // se agrega al fragmento
-            let $clon = d.importNode($template, true);
-            $fragment.appendChild($clon);
+            let $clone = d.importNode($template, true);
+            $fragment.appendChild($clone);
         });
         // se agrega el fragmento con los datos al cuerpo de la tabla
         $table.querySelector("tbody").appendChild($fragment);
-    } catch (error) {
-        let message = error.statusText || `Ocurrio un error: ${error.status}`;
+    } catch (err) {
+        let message = err.statusText || `Ocurrio un error: ${err.status}`;
         $table.insertAdjacentHTML("afterend", message);
     }
 };
@@ -48,12 +48,12 @@ d.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         if (!e.target.id.value) {
-            // metodo POST o crear
+            // vamos a crear o metodo POST
             try {
                 let options = {
                         method: "POST",
-                        Headers: {
-                            "Content-type": "application/json; charset= utf-8",
+                        headers: {
+                            "Content-type": "application/json; charset=utf-8",
                         },
                         body: JSON.stringify({
                             nombre: e.target.nombre.value,
@@ -76,11 +76,11 @@ d.addEventListener("submit", async (e) => {
                 $form.insertAdjacentHTML("afterend", message);
             }
         } else {
-            // metodo PUT o actualizar
+            // vamos a actualizar o metodo PUT
             try {
                 let options = {
                         method: "PUT",
-                        Headers: {
+                        headers: {
                             "Content-type": "application/json; charset= utf-8",
                         },
                         body: JSON.stringify({
